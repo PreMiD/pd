@@ -1,0 +1,17 @@
+name: CD
+on:
+  workflow_run:
+    workflows: ["CD Docker"]
+    types:
+      - completed
+jobs:
+  deploy:
+    name: CD
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Restart PD
+        uses: steebchen/kubectl@v2.0.0
+        with:
+          config: ${{ secrets.KUBE_CONFIG_DATA }}
+          command: rollout restart -n premid deployment/pd
