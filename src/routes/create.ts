@@ -4,7 +4,7 @@ import { nanoid } from "nanoid";
 import { MIN30, MIN30SEC, redis } from "../index.js";
 
 const create: RouteHandlerMethod = async (req, reply) => {
-	const url = (req.params as { "*": string })["*"].trim();
+	const url = req.url.replace("/create/", "").trim();
 
 	if (!url.length || url.length < 256)
 		return reply.status(400).send("Invalid URL");
