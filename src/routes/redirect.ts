@@ -4,13 +4,6 @@ import isInCIDRRange from "../functions/isInCIDRRange.js";
 import { CloudFlareCIDRs, GoogleCIDRs, MIN30, MIN30SEC, redis } from "../index.js";
 
 const redirect: RouteHandlerMethod = async (req, reply) => {
-	console.log(
-		req.socket.remoteAddress,
-		req.headers["cf-connecting-ip"],
-		req.headers["x-forwarded-for"],
-		req.headers
-	);
-
 	//* Check if cloudflare is connecting (Or someone pretending to be cloudflare)
 	if (
 		req.headers["cf-connecting-ip"]?.toString() &&
