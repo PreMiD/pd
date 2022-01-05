@@ -14,14 +14,14 @@ const redirect: RouteHandlerMethod = async (req, reply) => {
 	//* Check if cloudflare is connecting (Or someone pretending to be cloudflare)
 	if (
 		req.headers["cf-connecting-ip"]?.toString() &&
-		!isInCIDRRange(CloudFlareCIDRs, req.socket.remoteAddress!)
+		!isInCIDRRange(CloudFlareCIDRs, req.headers["x-forwarded-for"]?.toString()!)
 	)
 		return reply.status(401).send("Fake Cloudflare IP");
 
 	if (
 		!isInCIDRRange(
 			GoogleCIDRs,
-			req.headers["cf-connecting-ip"]?.toString() || req.socket.remoteAddress!
+			req.headers["cf-connecting-ip"]?.toString()! || req.socket.remoteAddress!
 		)
 	)
 		return reply.status(401).send("Not a Google Cloud IP");
