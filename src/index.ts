@@ -26,6 +26,15 @@ export const redis = createClient({
 		trustProxy: true
 	});
 
+server.addHook("onRequest", async (_, res) => {
+	res.headers({
+		"Access-Control-Allow-Origin": "*",
+		"Access-Control-Allow-Headers":
+			"Origin, X-Requested-With, Content-Type, Accept"
+	});
+	return;
+});
+
 server.get("/create/*", create);
 server.get("/*", redirect);
 
