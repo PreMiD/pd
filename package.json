@@ -13,7 +13,7 @@
 		"build": "tsc && devScript --copyOnly"
 	},
 	"dependencies": {
-		"fastify": "^3.27.1",
+		"fastify": "^3.27.2",
 		"got": "^12.0.1",
 		"ipaddr.js": "^2.0.1",
 		"nanoid": "^3.3.1",
