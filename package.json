@@ -33,6 +33,6 @@
 		"jest": "28.1.3",
 		"ts-devscript": "3.0.6",
 		"ts-jest": "28.0.8",
-		"typescript": "4.8.2"
+		"typescript": "4.8.3"
 	}
 }

@@ -18,7 +18,7 @@ specifiers:
   source-map-support: 0.5.21
   ts-devscript: 3.0.6
   ts-jest: 28.0.8
-  typescript: 4.8.2
+  typescript: 4.8.3
 
 dependencies:
   fastify: 4.5.3
@@ -39,8 +39,8 @@ devDependencies:
   ioredis-mock: 8.2.2_ioredis@5.2.3
   jest: 28.1.3_@types+node@18.7.16
   ts-devscript: 3.0.6
-  ts-jest: 28.0.8_556mfp7b5dutuj2jcrj5i7zc5q
-  typescript: 4.8.2
+  ts-jest: 28.0.8_oavexkd2euoi6eueqpz7c42uqe
+  typescript: 4.8.3
 
 packages:
 
@@ -3519,7 +3519,7 @@ packages:
       - supports-color
     dev: true
 
-  /ts-jest/28.0.8_556mfp7b5dutuj2jcrj5i7zc5q:
+  /ts-jest/28.0.8_oavexkd2euoi6eueqpz7c42uqe:
     resolution: {integrity: sha512-5FaG0lXmRPzApix8oFG8RKjAz4ehtm8yMKOTy5HX3fY6W8kmvOrmcY0hKDElW52FJov+clhUbrKAqofnj4mXTg==}
     engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
     hasBin: true
@@ -3548,7 +3548,7 @@ packages:
       lodash.memoize: 4.1.2
       make-error: 1.3.6
       semver: 7.3.7
-      typescript: 4.8.2
+      typescript: 4.8.3
       yargs-parser: 21.1.1
     dev: true
 
@@ -3568,12 +3568,6 @@ packages:
   /type-fest/0.21.3:
     resolution: {integrity: sha512-t0rzBq87m3fVcduHDUFhKmyyX+9eo6WQjZvf51Ea/M0Q7+T374Jp1aUiyUl0GKxp8M/OETVHSDvmkyPgvX+X2w==}
     engines: {node: '>=10'}
-    dev: true
-
-  /typescript/4.8.2:
-    resolution: {integrity: sha512-C0I1UsrrDHo2fYI5oaCGbSejwX4ch+9Y5jTQELvovfmFkK3HHSZJB8MSJcWLmCUBzQBchCrZ9rMRV6GuNrvGtw==}
-    engines: {node: '>=4.2.0'}
-    hasBin: true
     dev: true
 
   /typescript/4.8.3:
