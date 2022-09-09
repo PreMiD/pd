@@ -21,20 +21,19 @@ const redirect: RouteHandlerMethod = async (req, reply) => {
 
 	const id = (req.params as { "*": string })["*"].trim();
 
-	if (id.length !== 10) {
-		reply.code(404).send("Invalid ID");
-		return;
-	}
+	if (id.length !== 10) return reply.code(404).send("Invalid ID");
 
 	const multi = redis.multi();
 	multi.get(id);
-	multi.pExpire(id, MIN30);
-	const url = (await multi.exec())[0] as string;
+	multi.pexpire(id, MIN30);
+	const url = (await multi.exec())?.[0];
+	if (!url || url[0] || (!url[0] && !url[1]))
+		return reply.code(404).send("Unknown ID");
 
-	await redis.pExpire(url, MIN30);
+	await redis.pexpire(url[1] as string, MIN30);
 
 	reply.header("Cache-control", `public, max-age=${MIN30SEC}`);
-	return reply.redirect(url);
+	return reply.redirect(url[1] as string);
 };
 
 export default redirect;

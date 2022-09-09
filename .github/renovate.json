@@ -1,0 +1,9 @@
+{
+	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
+	"addLabels": ["dependencies"],
+	"assigneesFromCodeOwners": true,
+	"automerge": true,
+	"configWarningReuseIssue": false,
+	"semanticCommits": "enabled",
+	"stabilityDays": 3
+}

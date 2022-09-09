@@ -4,7 +4,7 @@ concurrency:
   cancel-in-progress: true
 on:
   workflow_run:
-    workflows: ["CI Dependencies"]
+    workflows: ["CI"]
     branches:
       - main
     types:
@@ -14,7 +14,7 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     uses: "Recodive/Workflows/.github/workflows/CD Docker.yml@main"
     secrets:
-      GH_NPM_TOKEN: ${{ secrets.GH_NPM_TOKEN }}
+      GH_NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     permissions:
       contents: read
       packages: write

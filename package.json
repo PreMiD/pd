@@ -10,20 +10,29 @@
 	"scripts": {
 		"start": "cd dist && node index.js",
 		"dev": "devScript",
-		"build": "tsc && devScript --copyOnly"
+		"build": "tsc && devScript --copyOnly",
+		"test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest"
 	},
 	"dependencies": {
-		"fastify": "^3.29.0",
-		"got": "^12.4.1",
-		"ipaddr.js": "^2.0.1",
-		"nanoid": "^3.3.4",
-		"redis": "^4.3.1",
-		"source-map-support": "^0.5.21"
+		"fastify": "4.5.3",
+		"got": "12.4.1",
+		"ioredis": "5.2.3",
+		"ipaddr.js": "2.0.1",
+		"nanoid": "4.0.0",
+		"source-map-support": "0.5.21"
 	},
 	"devDependencies": {
-		"@types/node": "^17.0.44",
-		"dotenv": "^16.0.2",
-		"ts-devscript": "^3.0.6",
-		"typescript": "^4.8.2"
+		"@types/ioredis": "4.28.10",
+		"@types/ioredis-mock": "5.6.0",
+		"@types/jest": "29.0.0",
+		"@types/node": "18.7.16",
+		"@types/redis-mock": "0.17.1",
+		"cross-env": "7.0.3",
+		"dotenv": "16.0.2",
+		"ioredis-mock": "8.2.2",
+		"jest": "28.1.3",
+		"ts-devscript": "3.0.6",
+		"ts-jest": "28.0.8",
+		"typescript": "4.8.2"
 	}
 }

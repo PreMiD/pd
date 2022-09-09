@@ -1,10 +1,11 @@
 import "source-map-support/register.js";
 
 import fastify from "fastify";
-import { createClient } from "redis";
+import Redis from "ioredis";
 
 import getCloudFlareAddr from "./functions/getCloudFlareAddr.js";
 import getGoogleAddr from "./functions/getGoogleAddr.js";
+import { CIDR } from "./functions/isInCIDRRange.js";
 import create from "./routes/create.js";
 import redirect from "./routes/redirect.js";
 
@@ -14,12 +15,12 @@ if (process.env.NODE_ENV !== "production")
 if (process.env.NODE_ENV === "production" && !process.env.REDIS_URL)
 	throw Error("Environment variable REDIS_URL is not set");
 
-if (!process.env.BASE_URL)
+if (!process.env.BASE_URL && process.env.NODE_ENV !== "test")
 	throw Error("Environment variable BASE_URL is not set");
 
-export const redis = createClient({
-		url: process.env.REDIS_URL || "redis://localhost:6379"
-	}),
+export const redis = new Redis(
+		process.env.REDIS_URL || "redis://localhost:6379"
+	),
 	MIN30 = 1_800_000,
 	MIN30SEC = MIN30 / 1000,
 	server = fastify({
@@ -38,21 +39,23 @@ server.addHook("onRequest", async (_, res) => {
 server.get("/create/*", create);
 server.get("/*", redirect);
 
-export let GoogleCIDRs = await getGoogleAddr(),
-	CloudFlareCIDRs = await getCloudFlareAddr();
+export let GoogleCIDRs: CIDR, CloudFlareCIDRs: CIDR;
 
-redis.on("ready", () => {
-	server.listen(3001, "0.0.0.0");
-});
+await updateAddresses();
 
-try {
+export async function run() {
 	await redis.connect();
-} catch (e) {
-	throw Error("Failed to connect to redis");
+
+	await server.listen({ port: 3001, host: "0.0.0.0" });
+
+	setInterval(updateAddresses, MIN30);
 }
 
-setInterval(async () => {
-	GoogleCIDRs = await getGoogleAddr();
-	CloudFlareCIDRs = await getCloudFlareAddr();
-	//* 30 mins
-}, MIN30);
+async function updateAddresses() {
+	const res = await Promise.all([getGoogleAddr(), getCloudFlareAddr()]);
+
+	GoogleCIDRs = res[0];
+	CloudFlareCIDRs = res[1];
+}
+
+if (process.env.NODE_ENV !== "test") redis.once("ready", run);
