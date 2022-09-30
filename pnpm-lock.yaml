@@ -7,7 +7,7 @@ specifiers:
   '@types/node': 18.7.23
   '@types/redis-mock': 0.17.1
   cross-env: 7.0.3
-  dotenv: 16.0.2
+  dotenv: 16.0.3
   fastify: 4.6.0
   got: 12.5.1
   ioredis: 5.2.3
@@ -35,7 +35,7 @@ devDependencies:
   '@types/node': 18.7.23
   '@types/redis-mock': 0.17.1
   cross-env: 7.0.3
-  dotenv: 16.0.2
+  dotenv: 16.0.3
   ioredis-mock: 8.2.2_ioredis@5.2.3
   jest: 28.1.3_@types+node@18.7.23
   ts-devscript: 3.0.7
@@ -1457,8 +1457,8 @@ packages:
     resolution: {integrity: sha512-v3mQ/DTdrOiVxk1Jmut/ywN5uCTYNThcW71+Kn+w8fw2xkFYRyC0kbrXNuduXVLfkXVTpa2HYdz6bImiGyhkEg==}
     dev: true
 
-  /dotenv/16.0.2:
-    resolution: {integrity: sha512-JvpYKUmzQhYoIFgK2MOnF3bciIZoItIIoryihy0rIA+H4Jy0FmgyKYAHCTN98P5ybGSJcIFbh6QKeJdtZd1qhA==}
+  /dotenv/16.0.3:
+    resolution: {integrity: sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==}
     engines: {node: '>=12'}
     dev: true
 
