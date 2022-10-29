@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@types/ioredis': 4.28.10
-  '@types/ioredis-mock': 5.6.0
+  '@types/ioredis-mock': 8.2.0
   '@types/jest': 29.2.0
   '@types/node': 18.11.7
   '@types/redis-mock': 0.17.1
@@ -30,7 +30,7 @@ dependencies:
 
 devDependencies:
   '@types/ioredis': 4.28.10
-  '@types/ioredis-mock': 5.6.0
+  '@types/ioredis-mock': 8.2.0
   '@types/jest': 29.2.0
   '@types/node': 18.11.7
   '@types/redis-mock': 0.17.1
@@ -786,10 +786,12 @@ packages:
     resolution: {integrity: sha512-SZs7ekbP8CN0txVG2xVRH6EgKmEm31BOxA07vkFaETzZz1xh+cbt8BcI0slpymvwhx5dlFnQG2rTlPVQn+iRPQ==}
     dev: false
 
-  /@types/ioredis-mock/5.6.0:
-    resolution: {integrity: sha512-2L20NMYTzNlCeLbi7aXQ/VlFTBu7qYoGefwB0NIDYN5TWzOslzvfl7ttoIN9IVO2LEeY+MBpSWO8oJQklL/o4Q==}
+  /@types/ioredis-mock/8.2.0:
+    resolution: {integrity: sha512-6t7PNRw2TY5nizHaU0uTRq9w521XsgjjapRTTbFzk7gtReWnhLWaFfrP5g7wWBlvniCxhC6H/OUCH3+eV4gMpg==}
     dependencies:
-      '@types/ioredis': 4.28.10
+      ioredis: 5.2.3
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /@types/ioredis/4.28.10:
