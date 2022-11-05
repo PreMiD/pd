@@ -16,7 +16,7 @@
 	"dependencies": {
 		"fastify": "4.9.2",
 		"got": "12.5.2",
-		"ioredis": "5.2.3",
+		"ioredis": "5.2.4",
 		"ipaddr.js": "2.0.1",
 		"nanoid": "4.0.0",
 		"source-map-support": "0.5.21"
