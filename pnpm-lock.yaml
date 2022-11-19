@@ -9,7 +9,7 @@ specifiers:
   cross-env: 7.0.3
   dotenv: 16.0.3
   fastify: 4.9.2
-  got: 12.5.2
+  got: 12.5.3
   ioredis: 5.2.4
   ioredis-mock: 8.2.2
   ipaddr.js: 2.0.1
@@ -22,7 +22,7 @@ specifiers:
 
 dependencies:
   fastify: 4.9.2
-  got: 12.5.2
+  got: 12.5.3
   ioredis: 5.2.4
   ipaddr.js: 2.0.1
   nanoid: 4.0.0
@@ -1788,8 +1788,8 @@ packages:
       slash: 3.0.0
     dev: true
 
-  /got/12.5.2:
-    resolution: {integrity: sha512-guHGMSEcsA5m1oPRweXUJnug0vuvlkX9wx5hzOka+ZBrBUOJHU0Z1JcNu3QE5IPGnA5aXUsQHdWOD4eJg9/v3A==}
+  /got/12.5.3:
+    resolution: {integrity: sha512-8wKnb9MGU8IPGRIo+/ukTy9XLJBwDiCpIf5TVzQ9Cpol50eMTpBq2GAuDsuDIz7hTYmZgMgC1e9ydr6kSDWs3w==}
     engines: {node: '>=14.16'}
     dependencies:
       '@sindresorhus/is': 5.3.0
