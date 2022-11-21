@@ -14,7 +14,7 @@
 		"test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest"
 	},
 	"dependencies": {
-		"fastify": "4.10.0",
+		"fastify": "4.10.2",
 		"got": "12.5.3",
 		"ioredis": "5.2.4",
 		"ipaddr.js": "2.0.1",
