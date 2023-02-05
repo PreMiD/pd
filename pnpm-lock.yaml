@@ -10,7 +10,7 @@ specifiers:
   dotenv: 16.0.3
   fastify: 4.12.0
   got: 12.5.3
-  ioredis: 5.2.4
+  ioredis: 5.3.0
   ioredis-mock: 8.2.6
   ipaddr.js: 2.0.1
   jest: 29.3.1
@@ -23,7 +23,7 @@ specifiers:
 dependencies:
   fastify: 4.12.0
   got: 12.5.3
-  ioredis: 5.2.4
+  ioredis: 5.3.0
   ipaddr.js: 2.0.1
   nanoid: 4.0.0
   source-map-support: 0.5.21
@@ -36,7 +36,7 @@ devDependencies:
   '@types/redis-mock': 0.17.1
   cross-env: 7.0.3
   dotenv: 16.0.3
-  ioredis-mock: 8.2.6_vcq47jt3jm7244otum4alsyihe
+  ioredis-mock: 8.2.6_pzvf5nxitplqzj76bbg3age4ke
   jest: 29.3.1_@types+node@18.11.18
   ts-devscript: 3.0.7
   ts-jest: 29.0.5_hfbqr3rujuziiw7lzul6vua4r4
@@ -782,7 +782,7 @@ packages:
   /@types/ioredis-mock/8.2.1:
     resolution: {integrity: sha512-VZsxDuzie7RGiPn/eMQ6ODZd6Q2gb0fTkD2gyPKVkojRw4D1hPisQ87aD+cCHqGylKeU4x01VwQ4QA82Fx4fRg==}
     dependencies:
-      ioredis: 5.2.4
+      ioredis: 5.3.0
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -1936,7 +1936,7 @@ packages:
       wrap-ansi: 7.0.0
     dev: true
 
-  /ioredis-mock/8.2.6_vcq47jt3jm7244otum4alsyihe:
+  /ioredis-mock/8.2.6_pzvf5nxitplqzj76bbg3age4ke:
     resolution: {integrity: sha512-Dc4fWVicryn1O6ZLT77TgKTATVBnk4XpUAYMQetKTLlKs4j7+/+6SUTYy0xnsQHVJedR0RBP3nCeqePobU/kog==}
     engines: {node: '>=12.22'}
     peerDependencies:
@@ -1948,11 +1948,11 @@ packages:
       '@types/ioredis-mock': 8.2.1
       fengari: 0.1.4
       fengari-interop: 0.1.3_fengari@0.1.4
-      ioredis: 5.2.4
+      ioredis: 5.3.0
     dev: true
 
-  /ioredis/5.2.4:
-    resolution: {integrity: sha512-qIpuAEt32lZJQ0XyrloCRdlEdUUNGG9i0UOk6zgzK6igyudNWqEBxfH6OlbnOOoBBvr1WB02mm8fR55CnikRng==}
+  /ioredis/5.3.0:
+    resolution: {integrity: sha512-Id9jKHhsILuIZpHc61QkagfVdUj2Rag5GzG1TGEvRNeM7dtTOjICgjC+tvqYxi//PuX2wjQ+Xjva2ONBuf92Pw==}
     engines: {node: '>=12.22.0'}
     dependencies:
       '@ioredis/commands': 1.2.0
