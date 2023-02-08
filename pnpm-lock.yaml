@@ -14,7 +14,7 @@ specifiers:
   ioredis-mock: 8.2.6
   ipaddr.js: 2.0.1
   jest: 29.4.1
-  nanoid: 4.0.0
+  nanoid: 4.0.1
   source-map-support: 0.5.21
   ts-devscript: 3.0.7
   ts-jest: 29.0.5
@@ -25,7 +25,7 @@ dependencies:
   got: 12.5.3
   ioredis: 5.3.0
   ipaddr.js: 2.0.1
-  nanoid: 4.0.0
+  nanoid: 4.0.1
   source-map-support: 0.5.21
 
 devDependencies:
@@ -2802,8 +2802,8 @@ packages:
     resolution: {integrity: sha512-nnbWWOkoWyUsTjKrhgD0dcz22mdkSnpYqbEjIm2nhwhuxlSkpywJmBo8h0ZqJdkp73mb90SssHkN4rsRaBAfAA==}
     dev: true
 
-  /nanoid/4.0.0:
-    resolution: {integrity: sha512-IgBP8piMxe/gf73RTQx7hmnhwz0aaEXYakvqZyE302IXW3HyVNhdNGC+O2MwMAVhLEnvXlvKtGbtJf6wvHihCg==}
+  /nanoid/4.0.1:
+    resolution: {integrity: sha512-udKGtCCUafD3nQtJg9wBhRP3KMbPglUsgV5JVsXhvyBs/oefqb4sqMEhKBBgqZncYowu58p1prsZQBYvAj/Gww==}
     engines: {node: ^14 || ^16 || >=18}
     hasBin: true
     dev: false
