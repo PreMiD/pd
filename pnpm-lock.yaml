@@ -9,7 +9,7 @@ specifiers:
   cross-env: 7.0.3
   dotenv: 16.0.3
   fastify: 4.14.0
-  got: 12.5.3
+  got: 12.6.0
   ioredis: 5.3.1
   ioredis-mock: 8.2.6
   ipaddr.js: 2.0.1
@@ -22,7 +22,7 @@ specifiers:
 
 dependencies:
   fastify: 4.14.0
-  got: 12.5.3
+  got: 12.6.0
   ioredis: 5.3.1
   ipaddr.js: 2.0.1
   nanoid: 4.0.1
@@ -1157,16 +1157,16 @@ packages:
     engines: {node: '>=14.16'}
     dev: false
 
-  /cacheable-request/10.2.1:
-    resolution: {integrity: sha512-3tLJyBjGuXw1s5gpKFSG3iS4kaKT4id04dZi98wzHQp/8cqZNweBnrF9J+rrlvrf4M53OdtDGNctNHFias8BEA==}
+  /cacheable-request/10.2.8:
+    resolution: {integrity: sha512-IDVO5MJ4LItE6HKFQTqT2ocAQsisOoCTUDu1ddCmnhyiwFQjXNPp4081Xj23N4tO+AFEFNzGuNEf/c8Gwwt15A==}
     engines: {node: '>=14.16'}
     dependencies:
       '@types/http-cache-semantics': 4.0.1
       get-stream: 6.0.1
-      http-cache-semantics: 4.1.0
-      keyv: 4.5.0
+      http-cache-semantics: 4.1.1
+      keyv: 4.5.2
       mimic-response: 4.0.0
-      normalize-url: 7.1.0
+      normalize-url: 8.0.0
       responselike: 3.0.0
     dev: false
 
@@ -1176,7 +1176,7 @@ packages:
     dependencies:
       clone-response: 1.0.3
       get-stream: 5.2.0
-      http-cache-semantics: 4.1.0
+      http-cache-semantics: 4.1.1
       keyv: 3.1.0
       lowercase-keys: 2.0.0
       normalize-url: 4.5.1
@@ -1822,14 +1822,14 @@ packages:
       slash: 3.0.0
     dev: true
 
-  /got/12.5.3:
-    resolution: {integrity: sha512-8wKnb9MGU8IPGRIo+/ukTy9XLJBwDiCpIf5TVzQ9Cpol50eMTpBq2GAuDsuDIz7hTYmZgMgC1e9ydr6kSDWs3w==}
+  /got/12.6.0:
+    resolution: {integrity: sha512-WTcaQ963xV97MN3x0/CbAriXFZcXCfgxVp91I+Ze6pawQOa7SgzwSx2zIJJsX+kTajMnVs0xcFD1TxZKFqhdnQ==}
     engines: {node: '>=14.16'}
     dependencies:
       '@sindresorhus/is': 5.3.0
       '@szmarczak/http-timer': 5.0.1
       cacheable-lookup: 7.0.0
-      cacheable-request: 10.2.1
+      cacheable-request: 10.2.8
       decompress-response: 6.0.0
       form-data-encoder: 2.1.2
       get-stream: 6.0.1
@@ -1883,8 +1883,8 @@ packages:
     resolution: {integrity: sha512-H2iMtd0I4Mt5eYiapRdIDjp+XzelXQ0tFE4JS7YFwFevXXMmOp9myNrUvCg0D6ws8iqkRPBfKHgbwig1SmlLfg==}
     dev: true
 
-  /http-cache-semantics/4.1.0:
-    resolution: {integrity: sha512-carPklcUh7ROWRK7Cv27RPtdhYhUsela/ue5/jKzjegVvXDqM2ILE9Q2BGn9JZJh1g87cp56su/FgQSzcWS8cQ==}
+  /http-cache-semantics/4.1.1:
+    resolution: {integrity: sha512-er295DKPVsV82j5kw1Gjt+ADA/XYHsajl82cGNQG2eyoPkvgUhX+nDIyelzhIWbbsXP39EHcI6l5tYs2FYqYXQ==}
 
   /http2-wrapper/2.1.11:
     resolution: {integrity: sha512-aNAk5JzLturWEUiuhAN73Jcbq96R7rTitAoXV54FYMatvihnpD2+6PUgU4ce3D/m5VDbw+F5CsyKSF176ptitQ==}
@@ -2625,8 +2625,8 @@ packages:
       json-buffer: 3.0.0
     dev: true
 
-  /keyv/4.5.0:
-    resolution: {integrity: sha512-2YvuMsA+jnFGtBareKqgANOEKe1mk3HKiXu2fRmAfyxG0MJAywNhi5ttWA3PMjl4NmpyjZNbFifR2vNjW1znfA==}
+  /keyv/4.5.2:
+    resolution: {integrity: sha512-5MHbFaKn8cNSmVW7BYnijeAVlE4cYA/SVkifVgrh7yotnfhKmjuXpDKjrABLnT0SfHWV21P8ow07OGfRrNDg8g==}
     dependencies:
       json-buffer: 3.0.1
     dev: false
@@ -2824,9 +2824,9 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /normalize-url/7.1.0:
-    resolution: {integrity: sha512-JgkdydFdLe1E5Q7DpLvKVyBZOOwXYGhIbMbOMm3lJ06XKzaiit+qo1HciO3z3IFklStfarzJHVQf9ZcNPTvZlw==}
-    engines: {node: '>=12.20'}
+  /normalize-url/8.0.0:
+    resolution: {integrity: sha512-uVFpKhj5MheNBJRTiMZ9pE/7hD1QTeEvugSJW/OmLzAp78PB5O6adfMNTvmfKhXBkvCzC+rqifWcVYpGFwTjnw==}
+    engines: {node: '>=14.16'}
     dev: false
 
   /npm-run-path/4.0.1:
