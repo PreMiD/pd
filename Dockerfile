@@ -1,19 +1,27 @@
-FROM gplane/pnpm:alpine
+FROM node:current-alpine as base
+WORKDIR /app
 
-COPY package.json pnpm-lock.yaml ./
-RUN pnpm install --frozen-lockfile
+RUN corepack enable
+
+COPY pnpm-lock.yaml .
+RUN pnpm fetch
+
+
+FROM base as builder
 
 COPY . .
+
+RUN pnpm i --offline
 RUN pnpm build
 
-FROM gplane/pnpm:alpine
+FROM base
 
 ENV NODE_ENV=production
 
-COPY package.json pnpm-lock.yaml ./
-RUN pnpm i --frozen-lockfile --prod
-
-COPY --from=0 dist .
+COPY --from=builder /app/dist .
 COPY LICENSE .
+
+COPY package.json pnpm-lock.yaml ./
+RUN pnpm i --offline --prod
 
 CMD ["node", "index"]

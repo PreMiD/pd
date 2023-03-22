@@ -19,7 +19,10 @@ if (!process.env.BASE_URL && process.env.NODE_ENV !== "test")
 	throw Error("Environment variable BASE_URL is not set");
 
 export const redis = new Redis(
-		process.env.REDIS_URL || "redis://localhost:6379"
+		process.env.REDIS_URL || "redis://localhost:6379",
+		{
+			enableReadyCheck: true
+		}
 	),
 	MIN30 = 1_800_000,
 	MIN30SEC = MIN30 / 1000,
@@ -41,12 +44,10 @@ server.get("/*", redirect);
 
 export let GoogleCIDRs: CIDR, CloudFlareCIDRs: CIDR;
 
-await updateAddresses();
-
 export async function run() {
-	await redis.connect();
-
-	await server.listen({ port: 3001, host: "0.0.0.0" });
+	await updateAddresses();
+	const url = await server.listen({ port: 3001, host: "0.0.0.0" });
+	console.log(`Server listening on ${url}`);
 
 	setInterval(updateAddresses, MIN30);
 }
