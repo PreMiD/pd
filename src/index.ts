@@ -21,7 +21,7 @@ if (!process.env.BASE_URL && process.env.NODE_ENV !== "test")
 export const redis = new Redis(
 		process.env.REDIS_URL || "redis://localhost:6379",
 		{
-			enableReadyCheck: true
+			lazyConnect: true
 		}
 	),
 	MIN30 = 1_800_000,
@@ -45,7 +45,6 @@ server.get("/*", redirect);
 export let GoogleCIDRs: CIDR, CloudFlareCIDRs: CIDR;
 
 export async function run() {
-	await updateAddresses();
 	const url = await server.listen({ port: 3001, host: "0.0.0.0" });
 	console.log(`Server listening on ${url}`);
 
@@ -60,3 +59,6 @@ async function updateAddresses() {
 }
 
 if (process.env.NODE_ENV !== "test") redis.once("ready", run);
+
+await updateAddresses();
+await redis.connect();
