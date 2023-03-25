@@ -11,7 +11,7 @@ specifiers:
   fastify: 4.15.0
   got: 12.6.0
   ioredis: 5.3.1
-  ioredis-mock: 8.2.6
+  ioredis-mock: 8.2.7
   ipaddr.js: 2.0.1
   jest: 29.5.0
   nanoid: 4.0.1
@@ -36,7 +36,7 @@ devDependencies:
   '@types/redis-mock': 0.17.1
   cross-env: 7.0.3
   dotenv: 16.0.3
-  ioredis-mock: 8.2.6_6jydlboc7eyi5xrsjrlqeddf74
+  ioredis-mock: 8.2.7_6jydlboc7eyi5xrsjrlqeddf74
   jest: 29.5.0_@types+node@18.15.5
   ts-devscript: 3.0.7
   ts-jest: 29.0.5_44ttdtjaknnkcgzh5px4h2qxl4
@@ -1936,8 +1936,8 @@ packages:
       wrap-ansi: 7.0.0
     dev: true
 
-  /ioredis-mock/8.2.6_6jydlboc7eyi5xrsjrlqeddf74:
-    resolution: {integrity: sha512-Dc4fWVicryn1O6ZLT77TgKTATVBnk4XpUAYMQetKTLlKs4j7+/+6SUTYy0xnsQHVJedR0RBP3nCeqePobU/kog==}
+  /ioredis-mock/8.2.7_6jydlboc7eyi5xrsjrlqeddf74:
+    resolution: {integrity: sha512-Oj0mN+w39CTTg5UyBoSMPwYDfx96AUHB0iXYdmxn87atHfDLktNCZ66NuSfiM4fnQ2FNjnzrEL53a0By2sFD5Q==}
     engines: {node: '>=12.22'}
     peerDependencies:
       '@types/ioredis-mock': ^8
@@ -1949,6 +1949,7 @@ packages:
       fengari: 0.1.4
       fengari-interop: 0.1.3_fengari@0.1.4
       ioredis: 5.3.1
+      semver: 7.3.8
     dev: true
 
   /ioredis/5.3.1:
@@ -2422,7 +2423,7 @@ packages:
       jest-util: 29.5.0
       natural-compare: 1.4.0
       pretty-format: 29.5.0
-      semver: 7.3.7
+      semver: 7.3.8
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -3210,6 +3211,14 @@ packages:
     hasBin: true
     dependencies:
       lru-cache: 6.0.0
+
+  /semver/7.3.8:
+    resolution: {integrity: sha512-NB1ctGL5rlHrPJtFDVIVzTyQylMLu9N9VICA6HSFJo8MCGVTMW6gfpicwKmmK/dAjTOrqu5l63JJOpDSrAis3A==}
+    engines: {node: '>=10'}
+    hasBin: true
+    dependencies:
+      lru-cache: 6.0.0
+    dev: true
 
   /set-cookie-parser/2.5.1:
     resolution: {integrity: sha512-1jeBGaKNGdEq4FgIrORu/N570dwoPYio8lSoYLWmX7sQ//0JY08Xh9o5pBcgmHQ/MbsYp/aZnOe1s1lIsbLprQ==}
