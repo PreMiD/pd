@@ -43,8 +43,8 @@ devDependencies:
     specifier: 16.0.3
     version: 16.0.3
   ioredis-mock:
-    specifier: 8.2.7
-    version: 8.2.7(@types/ioredis-mock@8.2.1)(ioredis@5.3.1)
+    specifier: 8.4.0
+    version: 8.4.0(@types/ioredis-mock@8.2.1)(ioredis@5.3.1)
   jest:
     specifier: 29.5.0
     version: 29.5.0(@types/node@18.15.11)
@@ -1954,8 +1954,8 @@ packages:
       wrap-ansi: 7.0.0
     dev: true
 
-  /ioredis-mock@8.2.7(@types/ioredis-mock@8.2.1)(ioredis@5.3.1):
-    resolution: {integrity: sha512-Oj0mN+w39CTTg5UyBoSMPwYDfx96AUHB0iXYdmxn87atHfDLktNCZ66NuSfiM4fnQ2FNjnzrEL53a0By2sFD5Q==}
+  /ioredis-mock@8.4.0(@types/ioredis-mock@8.2.1)(ioredis@5.3.1):
+    resolution: {integrity: sha512-ZB+Wj9kzYbYcPrU2Xr61Fo+Fcc8Y1/sAnc/8sCKhyi69C4lQf7cdTEqiqRwneICX2OwgGtpCw8Udr7GEyZixOQ==}
     engines: {node: '>=12.22'}
     peerDependencies:
       '@types/ioredis-mock': ^8
