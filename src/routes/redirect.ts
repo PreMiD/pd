@@ -1,7 +1,13 @@
 import { RouteHandlerMethod } from "fastify/types/route";
 
 import isInCIDRRange from "../functions/isInCIDRRange.js";
-import { CloudFlareCIDRs, GoogleCIDRs, MIN30, MIN30SEC, redis } from "../index.js";
+import {
+	CloudFlareCIDRs,
+	GoogleCIDRs,
+	MIN30,
+	MIN30SEC,
+	redis
+} from "../index.js";
 
 const redirect: RouteHandlerMethod = async (req, reply) => {
 	//* Check if cloudflare is connecting (Or someone pretending to be cloudflare)
@@ -30,10 +36,21 @@ const redirect: RouteHandlerMethod = async (req, reply) => {
 	if (!url || url[0] || (!url[0] && !url[1]))
 		return reply.code(404).send("Unknown ID");
 
-	await redis.pexpire(url[1] as string, MIN30);
+	const finalUrl = url[1] as string;
+	await redis.pexpire(finalUrl, MIN30);
 
 	reply.header("Cache-control", `public, max-age=${MIN30SEC}`);
-	return reply.redirect(url[1] as string);
+
+	//* If it is not a base64 string, redirect to it
+	if (!finalUrl.startsWith("data:image")) return reply.redirect(finalUrl);
+
+	//* Buffer the image and send it
+	const image = Buffer.from(
+			finalUrl.replace(/^data:image\/\w+;base64,/, ""),
+			"base64"
+		),
+		mime = finalUrl.split(";")[0].split(":")[1];
+	return reply.type(mime).send(image);
 };
 
 export default redirect;

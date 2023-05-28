@@ -1,6 +1,7 @@
 import "source-map-support/register.js";
 
 import fastify from "fastify";
+import multipart from "@fastify/multipart";
 import Redis from "ioredis";
 
 import getCloudFlareAddr from "./functions/getCloudFlareAddr.js";
@@ -8,6 +9,8 @@ import getGoogleAddr from "./functions/getGoogleAddr.js";
 import { CIDR } from "./functions/isInCIDRRange.js";
 import create from "./routes/create.js";
 import redirect from "./routes/redirect.js";
+import createBase64 from "./routes/create/base64.js";
+import createImage from "./routes/create/image.js";
 
 if (process.env.NODE_ENV !== "production")
 	(await import("dotenv")).config({ path: "../.env" });
@@ -30,6 +33,8 @@ export const redis = new Redis(
 		trustProxy: true
 	});
 
+server.register(multipart);
+
 server.addHook("onRequest", async (_, res) => {
 	res.headers({
 		"Access-Control-Allow-Origin": "*",
@@ -39,6 +44,8 @@ server.addHook("onRequest", async (_, res) => {
 	return;
 });
 
+server.post("/create/image", createImage);
+server.post("/create/base64", createBase64);
 server.get("/create/*", create);
 server.get("/*", redirect);
 
