@@ -32,7 +32,7 @@ const createImage: RouteHandlerMethod = async (req, reply) => {
 		return reply.send(process.env.BASE_URL + redisUrl);
 	}
 
-	const uniqueId = nanoid(10);
+	const uniqueId = `${nanoid(10)}.${file.mimetype.split("/")[1]}`;
 
 	const multi = redis.multi();
 	multi.psetex(body, MIN30, uniqueId);

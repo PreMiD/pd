@@ -29,7 +29,8 @@ const createBase64: RouteHandlerMethod = async (req, reply) => {
 		return reply.send(process.env.BASE_URL + redisUrl);
 	}
 
-	const uniqueId = nanoid(10);
+	const baseName = body.split(";")[0].split("/")[1];
+	const uniqueId = `${nanoid(10)}.${baseName}`;
 
 	const multi = redis.multi();
 	multi.psetex(body, MIN30, uniqueId);
