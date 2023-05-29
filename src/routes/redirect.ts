@@ -27,7 +27,7 @@ const redirect: RouteHandlerMethod = async (req, reply) => {
 
 	const id = (req.params as { "*": string })["*"].trim();
 
-	if (id.length !== 10) return reply.code(404).send("Invalid ID");
+	if (id.split(".")[0].length !== 10) return reply.code(404).send("Invalid ID");
 
 	const multi = redis.multi();
 	multi.get(id);
