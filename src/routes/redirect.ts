@@ -21,8 +21,7 @@ const redirect: RouteHandlerMethod = async (req, reply) => {
 		!isInCIDRRange(
 			GoogleCIDRs,
 			req.headers["cf-connecting-ip"]?.toString()! || req.socket.remoteAddress!
-		) &&
-		!isInCIDRRange(GoogleCIDRs, req.ip)
+		)
 	)
 		return reply.status(401).send("Not a Google Cloud IP");
 
