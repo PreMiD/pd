@@ -8,9 +8,6 @@ import {
 	MIN30SEC,
 	redis
 } from "../index.js";
-import { createReadStream, unlink, writeFileSync } from "node:fs";
-import { tmpdir } from "node:os";
-import { join } from "node:path";
 
 const redirect: RouteHandlerMethod = async (req, reply) => {
 	//* Check if cloudflare is connecting (Or someone pretending to be cloudflare)
@@ -24,7 +21,8 @@ const redirect: RouteHandlerMethod = async (req, reply) => {
 		!isInCIDRRange(
 			GoogleCIDRs,
 			req.headers["cf-connecting-ip"]?.toString()! || req.socket.remoteAddress!
-		)
+		) &&
+		!isInCIDRRange(GoogleCIDRs, req.ip)
 	)
 		return reply.status(401).send("Not a Google Cloud IP");
 
@@ -47,20 +45,12 @@ const redirect: RouteHandlerMethod = async (req, reply) => {
 	//* If it is not a base64 string, redirect to it
 	if (!finalUrl.startsWith("data:image")) return reply.redirect(finalUrl);
 
-	const randomName = `${Math.random().toString(36).slice(2)}.${
-		id.split(".")[1]
-	}`;
-	writeFileSync(
-		join(tmpdir(), randomName),
-		finalUrl.replace(/^data:image\/\w+;base64,/, ""),
-		"base64"
-	);
-
-	reply
-		.type(finalUrl.split(";")[0].split(":")[1])
-		.send(createReadStream(join(tmpdir(), randomName)));
-
-	unlink(join(tmpdir(), randomName), () => {});
+	const image = Buffer.from(
+			finalUrl.replace(/^data:image\/\w+;base64,/, ""),
+			"base64"
+		),
+		mime = finalUrl.split(";")[0].split(":")[1];
+	return reply.type(mime).send(image);
 };
 
 export default redirect;
