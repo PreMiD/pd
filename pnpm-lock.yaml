@@ -18,8 +18,8 @@ dependencies:
     specifier: 5.3.2
     version: 5.3.2
   ipaddr.js:
-    specifier: 2.0.1
-    version: 2.0.1
+    specifier: 2.1.0
+    version: 2.1.0
   nanoid:
     specifier: 4.0.2
     version: 4.0.2
@@ -2027,8 +2027,8 @@ packages:
     engines: {node: '>= 0.10'}
     dev: false
 
-  /ipaddr.js@2.0.1:
-    resolution: {integrity: sha512-1qTgH9NG+IIJ4yfKs2e6Pp1bZg8wbDbKHT21HrLIeYBTRLgMYKnMTPAuI3Lcs61nfx5h1xlXnbJtH1kX5/d/ng==}
+  /ipaddr.js@2.1.0:
+    resolution: {integrity: sha512-LlbxQ7xKzfBusov6UMi4MFpEg0m+mAm9xyNGEduwXMEDuf4WfzB/RZwMVYEd7IKGvh4IUkEXYxtAVu9T3OelJQ==}
     engines: {node: '>= 10'}
     dev: false
 
