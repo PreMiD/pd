@@ -10,27 +10,7 @@ import {
 } from "../index.js";
 
 const redirect: RouteHandlerMethod = async (req, reply) => {
-	//! Testing
-	console.log(`
-		Headers: ${JSON.stringify(req.headers)}
-		cf-connecting-ip: ${req.headers["cf-connecting-ip"]}
-		x-forwarded-for: ${req.headers["x-forwarded-for"]}
-		remoteAddress: ${req.socket.remoteAddress}
-		ip: ${req.ip}
-		ips: ${req.ips}
-		cloudflareCheck: ${
-			req.headers["cf-connecting-ip"]?.toString() &&
-			!isInCIDRRange(
-				CloudFlareCIDRs,
-				req.headers["x-forwarded-for"]?.toString()!
-			)
-		}
-		googleCheck: ${!isInCIDRRange(
-			GoogleCIDRs,
-			req.headers["cf-connecting-ip"]?.toString()! || req.socket.remoteAddress!
-		)}
-	`);
-	//* Check if cloudflare is connecting (Or someone pretending to be cloudflare)
+	//* Check if cloudflare is connecting (Or someone pretending to be cloudflare), so someone can't just send a cf-connecting-ip header like it is from google.
 	if (
 		req.headers["cf-connecting-ip"]?.toString() &&
 		!isInCIDRRange(CloudFlareCIDRs, req.headers["x-forwarded-for"]?.toString()!)
