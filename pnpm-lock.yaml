@@ -47,8 +47,8 @@ devDependencies:
     specifier: 7.0.3
     version: 7.0.3
   dotenv:
-    specifier: 16.3.0
-    version: 16.3.0
+    specifier: 16.3.1
+    version: 16.3.1
   ioredis-mock:
     specifier: 8.7.0
     version: 8.7.0(@types/ioredis-mock@8.2.2)(ioredis@5.3.2)
@@ -1490,8 +1490,8 @@ packages:
     resolution: {integrity: sha512-v3mQ/DTdrOiVxk1Jmut/ywN5uCTYNThcW71+Kn+w8fw2xkFYRyC0kbrXNuduXVLfkXVTpa2HYdz6bImiGyhkEg==}
     dev: true
 
-  /dotenv@16.3.0:
-    resolution: {integrity: sha512-tHB+hmf8MRCkT3VVivGiG8kq9HiGTmQ3FzOKgztfpJQH1IWuZTOvKSJmHNnQPowecAmkCJhLrxdPhOr06LLqIQ==}
+  /dotenv@16.3.1:
+    resolution: {integrity: sha512-IPzF4w4/Rd94bA9imS68tZBaYyBWSCE47V1RGuMrB94iyTOIEwRmVL2x/4An+6mETpLrKJ5hQkB8W4kFAadeIQ==}
     engines: {node: '>=12'}
     dev: true
 
