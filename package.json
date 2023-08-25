@@ -25,7 +25,7 @@
 	"devDependencies": {
 		"@types/ioredis": "4.28.10",
 		"@types/ioredis-mock": "8.2.2",
-		"@types/jest": "29.5.3",
+		"@types/jest": "29.5.4",
 		"@types/node": "20.5.2",
 		"@types/redis-mock": "0.17.1",
 		"cross-env": "7.0.3",
