@@ -21,8 +21,8 @@ dependencies:
     specifier: 2.1.0
     version: 2.1.0
   nanoid:
-    specifier: 5.0.1
-    version: 5.0.1
+    specifier: 5.0.2
+    version: 5.0.2
   source-map-support:
     specifier: 0.5.21
     version: 0.5.21
@@ -3013,8 +3013,8 @@ packages:
     resolution: {integrity: sha512-nnbWWOkoWyUsTjKrhgD0dcz22mdkSnpYqbEjIm2nhwhuxlSkpywJmBo8h0ZqJdkp73mb90SssHkN4rsRaBAfAA==}
     dev: true
 
-  /nanoid@5.0.1:
-    resolution: {integrity: sha512-vWeVtV5Cw68aML/QaZvqN/3QQXc6fBfIieAlu05m7FZW2Dgb+3f0xc0TTxuJW+7u30t7iSDTV/j3kVI0oJqIfQ==}
+  /nanoid@5.0.2:
+    resolution: {integrity: sha512-2ustYUX1R2rL/Br5B/FMhi8d5/QzvkJ912rBYxskcpu0myTHzSZfTr1LAS2Sm7jxRUObRrSBFoyzwAhL49aVSg==}
     engines: {node: ^18 || >=20}
     hasBin: true
     dev: false
