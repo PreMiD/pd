@@ -11,7 +11,10 @@ const create: RouteHandlerMethod = async (req, reply) => {
 	if (url.length < 256) return reply.status(400).send("URL is too short");
 
 	try {
-		new URL(url);
+		const urlObject = new URL(url);
+		if (!["http:", "https:"].includes(urlObject.protocol)) {
+			return reply.status(400).send("Invalid URL");
+		}
 	} catch {
 		return reply.status(400).send("Invalid URL");
 	}
